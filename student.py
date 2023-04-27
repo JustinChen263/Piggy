@@ -57,12 +57,13 @@ class Piggy(PiggyParent):
     ****************
     '''
     def justin(self):
-      self.forward()
-      time.sleep(2)
-      self.stop()
-      self.right()
-      time.sleep(2)
-      self.stop()
+      for square in range(4):
+        self.fwd()
+        time.sleep(2)
+        self.stop()
+        self.right()
+        time.sleep(2)
+        self.stop()
   
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
