@@ -60,10 +60,10 @@ class Piggy(PiggyParent):
   def justin(self):
     for square in range(4):
       self.fwd()
-      time.sleep(2)
+      time.sleep(1)
       self.stop()
       self.right()
-      time.sleep(2)
+      time.sleep(1)
       self.stop()
 
   def dance(self):
