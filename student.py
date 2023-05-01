@@ -98,7 +98,7 @@ class Piggy(PiggyParent):
     for check in range(8):
       self.turn_by_deg(30)
       self.read_distance()
-      if self.read_distance < 30:
+      if self.read_distance() < 30:
         return False
     return True
 
