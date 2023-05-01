@@ -95,7 +95,7 @@ class Piggy(PiggyParent):
       print("No space for dancing")
   def safe_to_dance(self):
 
-    for check in range(12):
+    for check in range(8):
       self.turn_by_deg(30)
       self.read_distance()
       if self.read_distance < 50:
