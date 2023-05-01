@@ -37,7 +37,7 @@ class Piggy(PiggyParent):
       "n": ("Navigate", self.nav),
       "d": ("Dance", self.dance),
       "o": ("Obstacle count", self.obstacle_count),
-      "s": ("Shy", self.shy),
+      "s": ("Safe to dance", self.safe_to_dance),
       "f": ("Follow", self.follow),
       "c": ("Calibrate", self.calibrate),
       "q": ("Quit", self.quit),
