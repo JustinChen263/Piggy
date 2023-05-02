@@ -56,7 +56,14 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-
+  def g_fwd(self, amount):
+    start_time = time.time()
+    start_heading = self.get_heading()
+    while time.time() < start_time + amount:
+      turn = self.get_heading() - start_heading
+      self.fwd(left = 50 - turn, right = 50 + turn)
+    self.stop()
+  
   def justin(self):
     for square in range(4):
       self.fwd()
@@ -95,7 +102,7 @@ class Piggy(PiggyParent):
       print("No space for dancing")
   def safe_to_dance(self):
 
-    for check in range(8):
+    for check in range(10):
       self.turn_by_deg(30)
       self.read_distance()
       if self.read_distance() < 100:
