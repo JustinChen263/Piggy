@@ -60,7 +60,7 @@ class Piggy(PiggyParent):
     while True:
       self.fwd()
       start_heading = self.get_heading()
-      while self.read_distance() < 100:
+      while self.read_distance() < 200:
         turn = self.get_heading() - start_heading
         self.fwd(left = 50 - turn, right = 50 + turn)
       self.stop()
