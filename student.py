@@ -58,7 +58,7 @@ class Piggy(PiggyParent):
     '''
   def g_fwd(self):
     start_heading = self.get_heading()
-    while time.time() < 100:
+    while self.read_distance() < 100:
       turn = self.get_heading() - start_heading
       self.fwd(left = 50 - turn, right = 50 + turn)
     
