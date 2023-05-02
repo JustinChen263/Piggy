@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
     while time.time() < 100:
       turn = self.get_heading() - start_heading
       self.fwd(left = 50 - turn, right = 50 + turn)
-    self.stop()
+    
   
   def justin(self):
     for square in range(4):
