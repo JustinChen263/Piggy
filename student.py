@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
       "f": ("Follow", self.follow),
       "c": ("Calibrate", self.calibrate),
       "q": ("Quit", self.quit),
-      "g": ("go", self.g_fwd)
+      "g": ("go", self.g_fwd),
+      "gg": ("GoGo", self.go)
     }
     # loop and print the menu...
     for key in sorted(menu.keys()):
@@ -66,7 +67,18 @@ class Piggy(PiggyParent):
       if self.read_distance() < 100:
         self.stop()
         self.turn_by_deg(180)
-  
+  def go(self):
+    while True:
+      self.fwd()
+      self.read_distance()
+      if self.read_distance() < 100:
+        return False
+      while self.read_distance() < 100:
+        self.stop()
+        self.turn_by_deg(180)
+        
+    
+        
   def justin(self):
     for square in range(4):
       self.fwd()
