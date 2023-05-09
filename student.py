@@ -103,6 +103,7 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.stop()
           self.turn_by_deg(-90)
+          self.servo(self.MIDPOINT)
           
   def turn(self):
      while True:
