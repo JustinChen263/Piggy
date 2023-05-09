@@ -79,7 +79,7 @@ class Piggy(PiggyParent):
         self.servo(2000)
         self.read_distance()
         if self.read_distance() > 200:
-          self.turn_to_deg(270)
+          self.turn_by_deg(-90)
           
   def turn(self):
      while True:
