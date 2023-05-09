@@ -80,7 +80,26 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() > 200:
           self.turn_by_deg(-90)
-          
+  def edge(self):
+    while True:
+      self.fwd()
+      self.read_distance()
+      if self.read_distance() < 200:
+        self.stop() 
+        self.servo(2000)
+        self.read_distance()
+        if self.read_distance() > 200:
+          self.turn_by_deg(90)
+          self.fwd()
+          time.sleep(1)
+          self.stop()
+          self.turn_by_deg(-90)
+        elif self.read_distance() < 200:
+          self.turn_by_deg(-90)
+          self.fwd()
+          time.sleep(1)
+          self.stop()
+          self.turn_by_deg(90)
   def turn(self):
      while True:
       self.fwd()
