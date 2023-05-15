@@ -44,7 +44,8 @@ class Piggy(PiggyParent):
       "g": ("go", self.g_fwd),
       "gg": ("GoGo", self.go),
       "b": ("Box", self.box),
-      "e": ("Edge", self.edge)
+      "e": ("Edge", self.edge),
+      "m": ("Mid", self.mid)
     }
     # loop and print the menu...
     for key in sorted(menu.keys()):
@@ -130,10 +131,10 @@ class Piggy(PiggyParent):
       left = self.read_distance()
       while self.servo(1000,self.MIDPOINT,3000):
         if left <200:
-          self.fwd(left)
+          self.fwd(right)
 
         elif right < 200:
-          self.fwd(right)
+          self.fwd(left)
     
         
   def justin(self):
