@@ -122,7 +122,18 @@ class Piggy(PiggyParent):
       if self.read_distance() < 100:
         self.stop()
         self.turn_by_deg(180)
-        
+
+  def mid(self):
+    while True:
+      self.fwd()
+      right = self.read_distance()
+      left = self.read_distance()
+      while self.servo(1000,self.MIDPOINT,3000):
+        if left <200:
+          self.fwd(left)
+
+        elif right < 200:
+          self.fwd(right)
     
         
   def justin(self):
