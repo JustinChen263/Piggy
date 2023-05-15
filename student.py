@@ -129,12 +129,13 @@ class Piggy(PiggyParent):
       self.fwd()
       right = self.read_distance()
       left = self.read_distance()
-      while self.servo(1000,self.MIDPOINT,3000):
-        if left <200:
-          self.fwd(right)
+      self.servo(1000,self.MIDPOINT,3000)
+    
+      if left <200:
+        self.fwd(right)
 
-        elif right < 200:
-          self.fwd(left)
+      elif right < 200:
+        self.fwd(left)
     
         
   def justin(self):
