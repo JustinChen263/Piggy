@@ -16,7 +16,7 @@ class Piggy(PiggyParent):
     ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-    self.LEFT_DEFAULT = 80
+    self.LEFT_DEFAULT = 77
     self.RIGHT_DEFAULT = 80
     self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
     self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
@@ -151,10 +151,10 @@ class Piggy(PiggyParent):
       self.read_distance()
       if self.read_distance() <150:
         self.stop()
-        self.turn_to_deg(90)
+        self.turn_by_deg(85)
         self.read_distance()
         if self.read_distance() < 150:
-          self.turn_to_deg(180)
+          self.turn_by_deg(170)
     
   def justin(self):
     for square in range(4):
