@@ -149,12 +149,12 @@ class Piggy(PiggyParent):
     while True:
       self.fwd()
       self.read_distance()
-      if self.read_distance() <100:
+      if self.read_distance() <150:
         self.stop()
-        self.turn_by_deg(90)
+        self.turn_to_deg(90)
         self.read_distance()
-        if self.read_distance() < 100:
-          self.turn_by_deg(180)
+        if self.read_distance() < 150:
+          self.turn_to_deg(180)
     
   def justin(self):
     for square in range(4):
