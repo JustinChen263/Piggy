@@ -170,10 +170,10 @@ class Piggy(PiggyParent):
       self.read_distance()
       if self.read_distance() <150:
         self.stop()
-        self.turn_by_deg(86)
+        self.turn_by_deg(84)
         self.read_distance()
         if self.read_distance()<150:
-          self.turn_by_deg(177)
+          self.turn_by_deg(178)
         
     
   def justin(self):
