@@ -144,6 +144,11 @@ class Piggy(PiggyParent):
 
       elif right < 200:
         self.fwd(left)
+      elif self.read_distance()< 200:
+        self.stop()
+        self.turn_by_degree(90)
+        self.fwd()
+        self.turn_by_degree(-90)
     
   def maze(self):
     while True:
@@ -151,10 +156,18 @@ class Piggy(PiggyParent):
       self.read_distance()
       if self.read_distance() <150:
         self.stop()
-        self.turn_by_deg(85)
+        self.servo(1000)
         self.read_distance()
-        if self.read_distance() < 150:
-          self.turn_by_deg(170)
+        if self.read_distance()<150:
+          self.servo(3000)
+          self.read_distance()
+          if self.read_distance() < 150:
+            self.servo(self.MIDPOINT)
+            self.turn_by_degree(-86)
+        else:
+          self.servo(self.MIDPOINT)
+          self.turn_by_degree(86)
+        
     
   def justin(self):
     for square in range(4):
