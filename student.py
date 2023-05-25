@@ -127,17 +127,40 @@ class Piggy(PiggyParent):
 
   def mid(self):
     while True:
-      self.fwd()
-      right = self.read_distance()
-      left = self.read_distance()
+      self.fwd(40,40)
       self.servo(1000)
-      self.read_distance()
+      if self.read_distance()< 200:
+        self.fwd(22,44)
+        time.sleep(2)
+        self.fwd(35,35)
+        time.sleep(2)
+        self.fwd(44,22)
+        time.sleep(2)
       self.servo(self.MIDPOINT)
-      self.read_distance()
-      self.servo(2000)
-      self.read_distance()
+      if self.read_distance() < 100:
+        self.stop()
+        self.turn_by_deg(86)
+        self.fwd()
+        time.sleep(2)
+        self.turn_by_deg(-86)
+      self.servo(3000)
+      if self.read_distance()< 200:
+        self.fwd(44,22)
+        time.sleep(2)
+        self.fwd(35,35)
+        time.sleep(2)
+        self.fwd(22,44)
+        time.sleep(2)
       self.servo(self.MIDPOINT)
-      self.read_distance()
+      if self.read_distance() < 100:
+        self.stop()
+        self.turn_by_deg(86)
+        self.fwd()
+        time.sleep(2)
+        self.turn_by_deg(-86)
+        
+        
+      
     
       if left <200:
         self.fwd(right)
@@ -163,10 +186,10 @@ class Piggy(PiggyParent):
           self.read_distance()
           if self.read_distance() < 150:
             self.servo(self.MIDPOINT)
-            self.turn_by_degree(-86)
+            self.turn_by_deg(-86)
         else:
           self.servo(self.MIDPOINT)
-          self.turn_by_degree(86)
+          self.turn_by_deg(86)
         
     
   def justin(self):
