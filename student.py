@@ -162,16 +162,7 @@ class Piggy(PiggyParent):
         
       
     
-      if left <200:
-        self.fwd(right)
-
-      elif right < 200:
-        self.fwd(left)
-      elif self.read_distance()< 200:
-        self.stop()
-        self.turn_by_degree(90)
-        self.fwd()
-        self.turn_by_degree(-90)
+      
     
   def maze(self):
     while True:
